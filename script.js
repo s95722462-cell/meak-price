@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!currentProduct) return;
 
         const price = parseInt(currentProduct['변경후 가격'].replace(/,/g, ''));
-        const specialDealerDiscountRate = parseFloat(specialDealerDiscountRateInput.value);
-        const userDiscountRate = parseFloat(userDiscountRateInput.value);
+        const specialDealerDiscountRate = parseFloat(specialDealerDiscountRateInput.value) / 100;
+        const userDiscountRate = parseFloat(userDiscountRateInput.value) / 100;
         console.log('Calculating with:', { price, specialDealerDiscountRate, userDiscountRate });
 
         if (!isNaN(specialDealerDiscountRate) && specialDealerDiscountRate > 0 && !isNaN(userDiscountRate) && userDiscountRate > 0) {
