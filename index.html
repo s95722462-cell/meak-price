@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Price Calculator</h1>
+        <div class="input-group">
+            <label for="model-name">형명:</label>
+            <input type="text" id="model-name" placeholder="Enter model name">
+        </div>
+        <div class="output-group">
+            <p><strong>변경 후 가격:</strong> <span id="price-after-change"></span></p>
+        </div>
+        <div class="input-group">
+            <label for="discount-rate">할인율:</label>
+            <input type="number" id="discount-rate" step="0.01" placeholder="e.g., 0.80">
+        </div>
+        <div class="output-group">
+            <p><strong>공급가:</strong> <span id="supply-price"></span></p>
+        </div>
+        <div class="output-group">
+            <p><strong>마진:</strong> <span id="margin"></span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
