@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const discountRateInput = document.getElementById('discount-rate');
     const supplyPriceSpan = document.getElementById('supply-price');
     const marginSpan = document.getElementById('margin');
+    const discountAmountSpan = document.getElementById('discount-amount');
 
     let products = [];
     let currentProduct = null;
@@ -45,7 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const supplyPrice = Math.round((price * discountRate) / 1000) * 1000;
             supplyPriceSpan.textContent = supplyPrice.toLocaleString();
 
-            const margin = ((supplyPrice - (price - supplyPrice)) / supplyPrice) * 100;
+            const discountAmount = price - supplyPrice;
+            discountAmountSpan.textContent = discountAmount.toLocaleString();
+
+            const margin = ((price - supplyPrice) / price) * 100;
             marginSpan.textContent = margin.toFixed(2) + ' %';
         } else {
             supplyPriceSpan.textContent = '';
