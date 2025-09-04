@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const supplyPrice = Math.round((price * discountRate) / 1000) * 1000;
             supplyPriceSpan.textContent = supplyPrice.toLocaleString();
 
-            const margin = ((price - supplyPrice) / price) * 100;
+            const margin = ((supplyPrice - (price - supplyPrice)) / supplyPrice) * 100;
             marginSpan.textContent = margin.toFixed(2) + ' %';
         } else {
             supplyPriceSpan.textContent = '';
